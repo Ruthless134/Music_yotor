@@ -26,7 +26,6 @@ body {
   border: 1px black;
   height: 100%;
   position: fixed;
-  background-color: rgb(225, 247, 247);
   text-align: center;
 }
 .person {
