@@ -8,7 +8,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-image: url(background image.png);
+  background-image: url(images/background\ image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -275,21 +275,13 @@ body {
   font-weight: 700;
   color: white;
 }
-span {
+.rec span {
   color: white;
   text-align: right;
   right: 5px;
   position: absolute;
   padding-top: 50%;
   transform: translateY(-80px);
-}
-.buttons {
-  width: 1.75rem;
-  background-color: rgba(134, 69, 169, 0.477);
-  border-radius: 45%;
-  margin: 10px;
-  transform: translateY(+50px);
-  scale: 1.2;
 }
 .container3 {
   bottom: 0;
@@ -300,39 +292,161 @@ span {
   padding-top: 25%;
   margin: 20px;
 }
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px; /* Adjust this as needed */
-  margin-top: 20px;
-}
-
-.playing-icon {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.line {
-  width: 250px; /* Adjust this width as needed */
-  height: 4px;
-  background-color: #9e9ee6;
-  position: relative;
-  border-radius: 2px; /* Optional for a rounded line */
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: #9e9ee6;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: left 0.1s; /* Smooth animation */
-}
+      .box {
+        max-width: 900px;
+        height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .song-timer,
+      .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+      }
+      .player {
+        margin-top: 2rem;
+      }
+      img {
+        width: 18rem;
+        height: 18rem;
+        margin-bottom: 2rem;
+        object-fit: cover;
+        border: 10px solid purple;
+        border-radius: 50%;
+      }
+      .name {
+        color: rgb(65, 1, 1);
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      .artist {
+        color: gray;
+        font-size: 14px;
+        text-transform: capitalize;
+        padding: 10px 0 20px 0;
+      }
+      .audioC {
+        margin: 10px 0 30px 0;
+      }
+      .song-timer {
+        margin-bottom: 20px;
+      }
+      .song-timer span {
+        font-size: 10px;
+        color: rgb(57, 75, 57);
+        font-weight: 800;
+        user-select: none;
+      }
+      .progress-area {
+        height: 7px;
+        width: 100%;
+        margin-top: 15px;
+        background: black;
+        box-shadow: inset 2px 2px 3px -2px rgba(167, 169, 171, 0.322),
+          inset 0 -1px 1px 0 #4a4c4e;
+        cursor: pointer;
+        transform: translateY(-20px);
+      }
+      .progress-area .progress-bar {
+        height: inherit;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #bf2311 0%, #e1530a 80%);
+      }
+      .progress-bar::before {
+        content: "";
+        position: relative;
+        background: linear-gradient(135deg, #2f3439, #1d1f23);
+        box-shadow: -2px 4px 2px;
+        border-radius: 50%;
+        left: -1px;
+        top: 2px;
+        z-index: 4;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        border: none;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: all 0.2s ease;
+      }
+      .progress-bar::after {
+        content: "";
+        position: relative;
+        background: #e1530a;
+        box-shadow: -2px 4px 2px;
+        border-radius: 50%;
+        left: 9px;
+        top: 2px;
+        z-index: 2;
+        width: 10px;
+        height: 10px;
+        outline: none;
+        border: none;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: all 0.2s ease;
+      }
+      .controls {
+        margin: 55px 8px 5px 8px;
+      }
+      .btnC {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid purple;
+        background-color: white;
+        box-shadow: -2px 4px 2px;
+      }
+      .btnC:active {
+        box-shadow: -2px 4px 6px;
+      }
+      .controls i {
+        font-size: 20px;
+        user-select: none;
+        color: rgb(189, 185, 185);
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      }
+      .controls .play-pause {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .play-pause i {
+        color: #fff;
+        text-align: center;
+      }
+      .play-pause {
+        border: 3px solid #be0ece;
+        background: linear-gradient(135deg, #520685, #ab24d1);
+        box-shadow: inset 4px 4px 8px #ab24d1, inset -4px -4px 8px #520685;
+      }
+      .play-pause:active {
+        box-shadow: inset -10px -10px 8px #ab24d1, inset 10px 10px 8px #520685;
+      }
+      .rotate {
+        animation: rotation 8s infinite linear;
+        transform-origin: center;
+      }
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
 
 @media (max-width: 768px) {
   .biggercontainer,
@@ -437,20 +551,4 @@ span {
     border-radius: 20px;
   }
 
-  .controls {
-    left: 50px;
-    transform: translateX(-50%) translateY(-40px);
-  }
-  .icon-container {
-    height: 20vh;
-  }
-  .container3 {
-    background: linear-gradient(120deg, black, blueviolet);
-  }
-  .line {
-    transform: translateY(-4.5rem);
-  }
 }
-
-
-
